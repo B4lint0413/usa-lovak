@@ -12,15 +12,15 @@ class HorseController extends Controller
     }
 
     public function list(){
-        return view("horse.list");
+        return view("horse.list", ["horses" => $this->getHorses(), "title" => "Felsorolás"]);
     }
 
     public function table(){
-        return view("horse.table");
+        return view("horse.table", ["horses" => $this->getHorses(), "title" => "Táblázat"]);
     }
 
     public function grid(){
-        return view("horse.grid");
+        return view("horse.grid", ["horses" => $this->getHorses(), "title" => "Grid"]);
     }
 
     public function getHorses(): Collection{
